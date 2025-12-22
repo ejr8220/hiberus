@@ -1,0 +1,33 @@
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_DB: appdb
+      POSTGRES_USER: appuser
+      POSTGRES_PASSWORD: apppass
+    ports:
+      - "5432:5432"
+    volumes:
+      - dbdata:/var/lib/postgresql/data
+    restart: unless-stopped
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    environment:
+      APP_ENV: dev
+      DATABASE_URL: "postgresql://appuser:apppass@db:5432/appdb?serverVersion=16&charset=utf8"
+    depends_on:
+      - db
+    ports:
+      - "8080:80"
+    volumes:
+      - ./backend:/var/www/html
+    restart: unless-stopped
+    command: >
+      sh -c "php bin/console doctrine:migrations:migrate --no-interaction --allow-no-migration &&
+             apache2-foreground"
+
+volumes:
+  dbdata:

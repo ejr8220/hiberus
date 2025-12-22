@@ -1,0 +1,42 @@
+{
+  "name": "mvp/orders",
+  "type": "project",
+  "require": {
+    "php": ">=8.2",
+    "symfony/framework-bundle": "^6.4",
+    "symfony/console": "^6.4",
+    "symfony/yaml": "^6.4",
+    "symfony/validator": "^7.4",
+    "symfony/http-foundation": "^6.4",
+    "symfony/routing": "^6.4",
+    "symfony/dependency-injection": "^6.4",
+    "doctrine/orm": "^3.5",
+    "doctrine/doctrine-bundle": "^2.18",
+    "doctrine/migrations": "^3.9",
+    "symfony/monolog-bundle": "^3.11",
+    "nelmio/cors-bundle": "^2.6",
+    "symfony/runtime": "^7.4",
+    "doctrine/doctrine-migrations-bundle": "^3.7"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^10.5",
+    "symfony/browser-kit": "^6.4",
+    "symfony/css-selector": "^6.4",
+    "symfony/maker-bundle": "^1.65"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "src/"
+    }
+  },
+  "scripts": {
+    "auto-scripts": {
+      "assets:install": "symfony-cmd"
+    }
+  },
+  "config": {
+    "allow-plugins": {
+      "symfony/runtime": true
+    }
+  }
+}
