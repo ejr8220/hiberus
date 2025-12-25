@@ -16,7 +16,7 @@ Incluye endpoints para gestionar
 
 ## 📦 Instalación
 
-1. **Copiar los archivos en una carpeta de preferencia hiberus**
+1. **Copiar los archivos en una carpeta de preferencia hiberus o clonar el repositorio **
    
 ## Backend
 desde la terminal nos ubicamos en la carpeta raiz del proyecto y digitamos
@@ -24,19 +24,24 @@ desde la terminal nos ubicamos en la carpeta raiz del proyecto y digitamos
 cd backend
 
 levantamos los contenedores backend y db
+
 docker compose up -d
 
 ejecutamos pruebas unitarias
+
 docker compose exec backend vendor/bin/phpunit --testdox --colors=always
 
 ## Frontend
 desde la terminal nos ubicamos en la carpeta raiz del proyecto y digitamos
+
 cd frontend
 
 instalamos dependencias
+
 npm install --legacy-peer-deps
 
 ejecutamos la aplicación
+
 npm start
 
 
@@ -48,7 +53,9 @@ Catálogo, permite crear productos
 
 ##Cliente
 Catálogo, en el listado del productos aparece la opción de agregar al carrito
+
 Carrito, puede eliminar los items seleccionado o generar la orden
+
 Pedidos, permite obtener un pedido por el id y si esta en estado PENDING se puede hacer el pago
 
 ##Postman
