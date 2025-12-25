@@ -24,24 +24,6 @@ RUN mkdir -p var \
 # Ajustar DocumentRoot a public/
 RUN sed -i 's|/var/www/html|/var/www/html/public|g' /etc/apache2/sites-available/000-default.conf
 
-# Configuración adicional en Apache para permitir OPTIONS y CORS
-RUN echo '<Directory /var/www/html/public>
-    AllowOverride All
-    Require all granted
-</Directory>
-
-<IfModule mod_headers.c>
-    Header always set Access-Control-Allow-Origin "http://localhost:3000"
-    Header always set Access-Control-Allow-Methods "GET, POST, PUT, DELETE, OPTIONS"
-    Header always set Access-Control-Allow-Headers "Content-Type, Authorization, X-Role, X-Customer-Id, Accept"
-</IfModule>
-
-# Manejo de preflight OPTIONS
-RewriteEngine On
-RewriteCond %{REQUEST_METHOD} OPTIONS
-RewriteRule ^(.*)$ $1 [R=200,L]
-' >> /etc/apache2/apache2.conf
-
 # Exponer puerto Apache
 EXPOSE 80
 

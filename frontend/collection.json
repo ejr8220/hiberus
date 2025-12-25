@@ -1,0 +1,100 @@
+{
+  "info": {
+    "name": "Hiberus Backend",
+    "_postman_id": "hiberus-backend-collection",
+    "description": "Colección de endpoints para el backend de Hiberus",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Listar productos",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/products",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["products"]
+        }
+      }
+    },
+    {
+      "name": "Crear producto",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" },
+          { "key": "X-Role", "value": "ADMIN" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Producto demo\",\n  \"price\": 10.5,\n  \"stock\": 100\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/products",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["products"]
+        }
+      }
+    },
+    {
+      "name": "Crear orden",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" },
+          { "key": "X-Role", "value": "CLIENTE" },
+          { "key": "X-Customer-Id", "value": "demo-customer" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"items\": [\n    { \"productId\": 1, \"quantity\": 2 }\n  ]\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/orders",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["orders"]
+        }
+      }
+    },
+    {
+      "name": "Detalle de orden",
+      "request": {
+        "method": "GET",
+        "header": [
+          { "key": "X-Role", "value": "CLIENTE" }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/orders/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["orders", "1"]
+        }
+      }
+    },
+    {
+      "name": "Checkout de orden",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "X-Role", "value": "CLIENTE" },
+          { "key": "X-Customer-Id", "value": "demo-customer" }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/orders/1/checkout",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "8080",
+          "path": ["orders", "1", "checkout"]
+        }
+      }
+    }
+  ]
+}

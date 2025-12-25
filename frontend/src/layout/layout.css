@@ -1,0 +1,60 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.layout-body {
+  display: flex;
+  flex: 1;
+}
+
+.layout-content {
+  flex: 1;
+  padding: 1rem;
+  background-color: #f9f9f9;
+}
+
+.sidebar {
+  width: 240px;
+  height: 100vh;
+  background-color: #0f172a; /* azul oscuro sobrio */
+  color: #f1f5f9;            /* texto claro */
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0;
+  box-shadow: 2px 0 6px rgba(0,0,0,0.15);
+}
+
+.sidebar-header {
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 1rem;
+  border-bottom: 1px solid #1e293b;
+  color: #ffffff;
+}
+
+.sidebar-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar-menu li {
+  padding: 0.75rem 1.25rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  font-size: 0.95rem;
+}
+
+.sidebar-menu li:hover {
+  background-color: #1e293b; /* hover más claro */
+  color: #38bdf8;            /* azul celeste para resaltar */
+}
+
+.sidebar-menu li.active {
+  background-color: #334155;
+  color: #ffffff;
+  font-weight: 600;
+  border-left: 4px solid #38bdf8;
+}

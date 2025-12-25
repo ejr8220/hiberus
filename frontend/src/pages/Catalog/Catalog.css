@@ -1,0 +1,165 @@
+/* ===== Pantalla principal ===== */
+.catalog-container {
+  padding: 2rem;
+  background-color: #f5f7fa;
+  min-height: 100vh;
+}
+
+.catalog-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.catalog-header h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.catalog-header .p-button {
+  background-color: #2196f3;
+  border: none;
+  border-radius: 6px;
+  padding: 0.6rem 1.2rem;
+  font-weight: 500;
+}
+
+.catalog-header .p-button:hover {
+  background-color: #1976d2;
+}
+
+/* ===== DataTable ===== */
+.p-datatable {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.p-datatable .p-datatable-thead > tr > th {
+  background-color: #eef2f7;
+  color: #34495e;
+  font-weight: 600;
+  text-align: center;
+}
+
+.p-datatable .p-datatable-tbody > tr > td {
+  text-align: center;
+  padding: 0.8rem;
+}
+
+.p-datatable .p-button {
+  border-radius: 50%;
+  width: 2.2rem;
+  height: 2.2rem;
+}
+
+/* ===== Modal (Dialog) ===== */
+.p-dialog {
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+  position: relative; /* necesario para el botón flotante */
+}
+
+.p-dialog .p-dialog-header {
+  background-color: #2196f3;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.2rem;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.p-dialog .p-dialog-content {
+  padding: 1.5rem;
+  background-color: #fafafa;
+}
+
+/* ===== Formulario en dos columnas ===== */
+.modal-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem 2rem;
+}
+
+.modal-form label {
+  font-weight: 500;
+  color: #2c3e50;
+  margin-bottom: 0.3rem;
+  display: block;
+}
+
+.modal-form .p-inputtext {
+  width: 100%;
+  border-radius: 6px;
+  border: 1px solid #ced4da;
+  padding: 0.5rem;
+}
+
+.modal-form .p-inputtext:focus {
+  border-color: #2196f3;
+  box-shadow: 0 0 0 0.2rem rgba(33,150,243,0.25);
+}
+
+/* ===== Botón Guardar flotante ===== */
+.modal-save-button {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  background-color: #2196f3;
+  border: none;
+  border-radius: 6px;
+  padding: 0.6rem 1.2rem;
+  font-weight: 500;
+}
+
+.modal-save-button:hover {
+  background-color: #1976d2;
+}
+
+/* Alinear encabezados y celdas */
+.th-left { text-align: left !important; }
+.th-right { text-align: right !important; }
+.td-left { text-align: left !important; }
+.td-right { text-align: right !important; }
+
+/* Asegurar color visible en la cabecera del grid */
+.catalog-table .p-datatable-thead > tr > th {
+  background-color: #0f172a; /* azul oscuro sobrio */
+  color: #ffffff;
+  font-weight: 600;
+  border-color: #1f2937;
+}
+
+/* Filas intercaladas (striped) */
+.catalog-table.p-datatable-striped .p-datatable-tbody > tr:nth-child(odd) {
+  background-color: #f8fafc; /* muy claro */
+}
+.catalog-table.p-datatable-striped .p-datatable-tbody > tr:nth-child(even) {
+  background-color: #eef2f7; /* ligeramente más oscuro */
+}
+
+/* Hover sutil sin perder contraste */
+.catalog-table .p-datatable-tbody > tr:hover {
+  background-color: #e2e8f0;
+}
+
+/* Ajustes de bordes para una apariencia profesional */
+.catalog-table .p-datatable-tbody > tr > td {
+  border-color: #e5e7eb;
+}
+
+.modal-form > div {
+  margin-bottom: 1rem;
+}
+
+.row-fields {
+  display: flex;
+  gap: 1rem;
+}
+
+.row-fields > div {
+  flex: 1;
+}
+
